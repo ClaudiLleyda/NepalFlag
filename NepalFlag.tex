@@ -182,6 +182,7 @@
 	
 %		(D) Method of Making the Border
 %		(23) The width of the border will be equal to the width of TN. This will be of deep blue color and will be provided on all the sides of the flag. However, on the given angles of the flag the external angles will be equal to the internal angles.
+        \tkzDrawSegment[red](T,N)
 		\tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
 		\tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
 		\tkzDrawSegment[dashed](a1,a2)
@@ -189,12 +190,24 @@
 		\tkzDefLine[perpendicular=through T,/tikz/overlay](B,D)
 		\tkzInterLC(T,tkzPointResult)(T,N) \tkzGetFirstPoint{b'}
 %		\tkzDrawPoint(b')
-		\tkzDrawSegment[red](T,N)
 		\tkzDefLine[parallel=through B,/tikz/overlay](T,b') \tkzGetPoint{b1}
 		\tkzDefLine[parallel=through b1,/tikz/overlay](B,D) \tkzGetPoint{b2}
 		\tkzDrawSegment[dashed](b1,b2)
 %		\tkzDrawSegment[red](b1,B)
-		
+		%\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
+        \tkzInterLL(a1,a2)(b1,b2) \tkzGetPoint{ab}
+        \tkzDrawSegment[dashed](a2,ab)
+        \tkzDrawSegment[dashed](b1,ab)
+        \tkzDefLine[parallel=through T,/tikz/overlay](J,G)
+        \tkzInterLL(G,F)(T,tkzPointResult) \tkzGetPoint{c1}
+        \tkzDefLine[parallel=through N,/tikz/overlay](J,G) \tkzGetPoint{c2}
+        \tkzDefLine[parallel=through c1,/tikz/overlay](I,H)
+        \tkzInterLL(c1,tkzPointResult)(N,c2) \tkzGetPoint{c3}
+        \tkzDefLine[parallel=through c3,/tikz/overlay](F,G) \tkzGetPoint{c4}
+        \tkzInterLL(c3,c4)(b1,b2) \tkzGetPoint{c5}
+        \tkzInterLL(c3,c4)(C,G) \tkzGetPoint{c6}
+        \tkzDrawSegment[dashed](c5,c6)
+
 %		(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
 %		Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.
 	

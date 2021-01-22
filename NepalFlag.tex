@@ -5,196 +5,196 @@
 \pagestyle{empty}
 \begin{center}
 %	\setlength{\unitlength}{\textwidth}
-	\begin{tikzpicture}
+    \begin{tikzpicture}
 %		(A) Method of Making the shape inside the Border
 %		(1) On the lower portion of a crimson cloth draw a line AB of the required length from left to right.
 %		\tkzDefPoint(-1,-1){Test}
-		\tkzDefPoint(0,0){A}
-		\tkzDefPoint(10,0){B}
-		\tkzDrawSegment(A,B)
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(10,0){B}
+        \tkzDrawSegment(A,B)
 %		(2) From A draw a line AC perpendicular to AB making AC equal to AB plus one third AB. From AC mark off D making the line AD equal to line AB. Join BD.
-		\tkzDefLine[perpendicular=through A, K=4/3](A,B) \tkzGetPoint{C}
-		\tkzDrawSegment(A,C)
-		\tkzDefLine[perpendicular=through A, K=1](A,B) \tkzGetPoint{D}
-		\tkzDrawSegment(B,D)
+        \tkzDefLine[perpendicular=through A, K=4/3](A,B) \tkzGetPoint{C}
+        \tkzDrawSegment(A,C)
+        \tkzDefLine[perpendicular=through A, K=1](A,B) \tkzGetPoint{D}
+        \tkzDrawSegment(B,D)
 %		(3) From BD mark off E making BE equal to AB.
-		\tkzInterLC[,/tikz/overlay](B,D)(B,A) \tkzGetSecondPoint{E}
+        \tkzInterLC[,/tikz/overlay](B,D)(B,A) \tkzGetSecondPoint{E}
 %		(4) Touching E draw a line FG, starting from the point F on line AC, parallel to AB to the right hand-side. Mark off FG equal to AB.
-		\tkzDefLine[parallel=through E,/tikz/overlay](A,B)
-		\tkzInterLL(A,C)(E,tkzPointResult) \tkzGetPoint{F}
-		\tkzDefLine[parallel=through F,/tikz/overlay](A,B) \tkzGetPoint{G}
-		\tkzDrawSegment(F,G)
+        \tkzDefLine[parallel=through E,/tikz/overlay](A,B)
+        \tkzInterLL(A,C)(E,tkzPointResult) \tkzGetPoint{F}
+        \tkzDefLine[parallel=through F,/tikz/overlay](A,B) \tkzGetPoint{G}
+        \tkzDrawSegment(F,G)
 %		(5) Join CG.
-		\tkzDrawSegment(C,G)
+        \tkzDrawSegment(C,G)
 %		
 %		(B) Method of making the Moon
 %		(6) From AB mark off AH making AH equal to one-fourth of line AB and starting from H draw a line HI parallel to line AC touching line CG at point I.
-		\tkzDefMidPoint(A,B)
-		\tkzDefMidPoint(A,tkzPointResult) \tkzGetPoint{H}
-		\tkzDefLine[parallel=through H,/tikz/overlay](A,C)
-		\tkzInterLL(H,tkzPointResult)(C,G) \tkzGetPoint{I}
-		\tkzDrawSegment(H,I)
+        \tkzDefMidPoint(A,B)
+        \tkzDefMidPoint(A,tkzPointResult) \tkzGetPoint{H}
+        \tkzDefLine[parallel=through H,/tikz/overlay](A,C)
+        \tkzInterLL(H,tkzPointResult)(C,G) \tkzGetPoint{I}
+        \tkzDrawSegment(H,I)
 %		(7) Bisect CF at J and draw a line JK parallel to AB touching CG at point K.
-		\tkzDefMidPoint(C,F) \tkzGetPoint{J}
-		\tkzDefLine[parallel=through J,/tikz/overlay](A,B)
-		\tkzInterLL(J,tkzPointResult)(C,G) \tkzGetPoint{K}
-		\tkzDrawSegment(J,K)
+        \tkzDefMidPoint(C,F) \tkzGetPoint{J}
+        \tkzDefLine[parallel=through J,/tikz/overlay](A,B)
+        \tkzInterLL(J,tkzPointResult)(C,G) \tkzGetPoint{K}
+        \tkzDrawSegment(J,K)
 %		(8) Let L be the point where lines JK and HI cut one another.
-		\tkzInterLL(J,K)(H,I) \tkzGetPoint{L}
+        \tkzInterLL(J,K)(H,I) \tkzGetPoint{L}
 %		(9) Join JG.
-		\tkzDrawSegment(J,G)
+        \tkzDrawSegment(J,G)
 %		(10) Let M be the point where line JG and HI cut one another.
-		\tkzInterLL(J,G)(H,I) \tkzGetPoint{M}
+        \tkzInterLL(J,G)(H,I) \tkzGetPoint{M}
 %		(11) With center M and with a distance shortest from M to BD mark off N on the lower portion of line HI.
-		\tkzDefLine[perpendicular=through M,/tikz/overlay](B,D)
-		\tkzInterLL(tkzPointResult,M)(B,D)
-		\tkzInterLC[/tikz/overlay](H,I)(M,tkzPointResult) \tkzGetFirstPoint{N}
+        \tkzDefLine[perpendicular=through M,/tikz/overlay](B,D)
+        \tkzInterLL(tkzPointResult,M)(B,D)
+        \tkzInterLC[/tikz/overlay](H,I)(M,tkzPointResult) \tkzGetFirstPoint{N}
 %		(12) Touching M and starting from O, a point on AC, draw a line from left to right parallel to AB.
-		\tkzDefLine[parallel=through M,/tikz/overlay](A,B)
-		\tkzInterLL(A,C)(tkzPointResult,M) \tkzGetPoint{O}
-		\tkzInterLL(O,M)(C,G)
-		\tkzDrawSegment(O,tkzPointResult)
+        \tkzDefLine[parallel=through M,/tikz/overlay](A,B)
+        \tkzInterLL(A,C)(tkzPointResult,M) \tkzGetPoint{O}
+        \tkzInterLL(O,M)(C,G)
+        \tkzDrawSegment(O,tkzPointResult)
 %		(13) With center L and radius LN draw a semi-circle on the lower portion and let P and Q be the points where it touches the line OM respectively.
-		\tkzInterLC[,/tikz/overlay](O,M)(L,N) \tkzGetPoints{Q}{P}
+        \tkzInterLC[,/tikz/overlay](O,M)(L,N) \tkzGetPoints{Q}{P}
 %		\tkzDrawCircle[dashed](L,P)
-		\tkzDrawArc(L,P)(Q)
+        \tkzDrawArc(L,P)(Q)
 %		(14) With the center M and radius MQ draw a semi-circle on the lower portion touching P and Q.
-		\tkzDrawArc(M,P)(Q)
+        \tkzDrawArc(M,P)(Q)
 %		(15) With center N and radius NM draw an arc touching PNQ at R and S. Join RS. Let T be the point where RS and HI cut one another.
-		\tkzInterCC(N,M)(L,P) \tkzGetPoints{R}{S}
+        \tkzInterCC(N,M)(L,P) \tkzGetPoints{R}{S}
 %		\tkzDrawArc(N,S)(R)
-		\tkzInterLL(R,S)(I,H) \tkzGetPoint{T}
+        \tkzInterLL(R,S)(I,H) \tkzGetPoint{T}
 %		(16) With center T and radius TS draw a semi-circle on the upper portion of PNQ touching at two points.
-		\tkzDrawArc(T,S)(R)
+        \tkzDrawArc(T,S)(R)
 %		(17) With center T and radius TM draw an arc on the upper portion of PNQ touching at two points.
-		\tkzInterCC(T,M)(L,P) \tkzGetPoints{P'}{Q'}
-		\tkzDrawArc(T,Q')(P')
+        \tkzInterCC(T,M)(L,P) \tkzGetPoints{P'}{Q'}
+        \tkzDrawArc(T,Q')(P')
 %		(18) Eight equal and similar triangles of the moon are to be made in the space lying inside the semi-circle of No (16) and outside the arc of No (17) of his Schedule.
-		\tkzInterLC[,/tikz/overlay](R,T)(T,M) \tkzGetFirstPoint{A0}
-		\tkzInterLC[,/tikz/overlay](T,M)(T,R) \tkzGetSecondPoint{M'}
-		\tkzDefMidPoint(M',R)
-		\tkzInterLC[,/tikz/overlay](T,tkzPointResult)(T,M') \tkzGetSecondPoint{A2'}
-		\tkzDefMidPoint(A2',R)
-		\tkzInterLC[,/tikz/overlay](tkzPointResult,T)(T,M) \tkzGetFirstPoint{A1}
-		\tkzDefMidPoint(A1,A0)
-		\tkzInterLC[,/tikz/overlay](tkzPointResult,T)(T,M') \tkzGetFirstPoint{B1}
-		\tkzInterCC(A1,A0)(T,M) \tkzGetFirstPoint{A2}
-		\tkzInterCC(A2,A1)(T,M) \tkzGetFirstPoint{A3}
-		\tkzInterCC(A3,A2)(T,M) \tkzGetFirstPoint{A4}
-		\tkzInterCC(A4,A3)(T,M) \tkzGetFirstPoint{A5}
-		\tkzInterCC(A5,A4)(T,M) \tkzGetFirstPoint{A6}
-		\tkzInterCC(A6,A5)(T,M) \tkzGetFirstPoint{A7}
-		\tkzInterCC(A7,A6)(T,M) \tkzGetFirstPoint{A8}
-		\tkzDefMidPoint(A1,A2)
-		\tkzInterLC[,/tikz/overlay](T,tkzPointResult)(T,M') \tkzGetSecondPoint{B2}
-		\tkzInterCC(B1,B2)(T,M') \tkzGetSecondPoint{B0'}
-		\tkzInterLC[,/tikz/overlay](A0,B0')(L,P) \tkzGetSecondPoint{B0}
-		\tkzInterCC(B2,B1)(T,M') \tkzGetFirstPoint{B3}
-		\tkzInterCC(B3,B2)(T,M') \tkzGetFirstPoint{B4}
-		\tkzInterCC(B4,B3)(T,M') \tkzGetFirstPoint{B5}
-		\tkzInterCC(B5,B4)(T,M') \tkzGetFirstPoint{B6}
-		\tkzInterCC(B6,B5)(T,M') \tkzGetFirstPoint{B7}
-		\tkzInterCC(B7,B6)(T,M') \tkzGetFirstPoint{B8}
-		\tkzInterCC(B8,B7)(T,M') \tkzGetFirstPoint{B9'}
-		\tkzInterLC[,/tikz/overlay](A8,B9')(L,P) \tkzGetFirstPoint{B9}
-		\tkzDrawSegment(B0,A0)
-		\tkzDrawSegment(A0,B1)
-		\tkzDrawSegment(B1,A1)
-		\tkzDrawSegment(A1,B2)
-		\tkzDrawSegment(B2,A2)
-		\tkzDrawSegment(A2,B3)
-		\tkzDrawSegment(B3,A3)
-		\tkzDrawSegment(A3,B4)
-		\tkzDrawSegment(B4,A4)
-		\tkzDrawSegment(A4,B5)
-		\tkzDrawSegment(B5,A5)
-		\tkzDrawSegment(A5,B6)
-		\tkzDrawSegment(B6,A6)
-		\tkzDrawSegment(A6,B7)
-		\tkzDrawSegment(B7,A7)
-		\tkzDrawSegment(A7,B8)
-		\tkzDrawSegment(B8,A8)
-		\tkzDrawSegment(A8,B9)
-%		
-%		(C) Method of Making the Sun
-%		(19) Bisect line AF at U, and draw a line UV parallel to AB line touching line BE at V.
-		\tkzDefMidPoint(A,F) \tkzGetPoint{U}
-		\tkzDefLine[parallel=through U,/tikz/overlay](A,B)
-		\tkzInterLL(U,tkzPointResult)(B,E) \tkzGetPoint{V}
-		\tkzDrawSegment(U,V)
-%		(20) With center W, the point where HI and UV cut one another and radius MN draw a circle.
-		\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
-		\tkzDefLine[parallel=through W,/tikz/overlay](M,N) \tkzGetPoint{B'}
-		\tkzDrawCircle(W,B')
-%		(21) With center W and radius LN draw a circle.
-		\tkzDefLine[parallel=through W,/tikz/overlay](L,N) \tkzGetPoint{A0}
-		\tkzDrawCircle(W,A0)
-%		(22) Twelve equal and similar triangles of the sun are to be made in the space enclosed by the circle of No (20) and No (21) with the two apexes of two triangles touching line HI.
-		\tkzInterCC(W,A0)(A0,W) \tkzGetPoints{A2}{A10}
-		\tkzDefMidPoint(A0,A2) \tkzGetPoint{A1'}
-		\tkzInterLC[,/tikz/overlay](W,A1')(W,A0) \tkzGetPoints{A7}{A1}
-		\tkzInterCC(W,A2)(A2,A1) \tkzGetFirstPoint{A3}
-		\tkzInterCC(W,A3)(A3,A2) \tkzGetFirstPoint{A4}
-		\tkzInterCC(W,A4)(A4,A3) \tkzGetFirstPoint{A5}
-		\tkzInterCC(W,A5)(A5,A4) \tkzGetFirstPoint{A6}
-		\tkzInterCC(W,A7)(A7,A6) \tkzGetFirstPoint{A8}
-		\tkzInterCC(W,A8)(A8,A7) \tkzGetFirstPoint{A9}
-		\tkzInterCC(W,A10)(A10,A9) \tkzGetFirstPoint{A11}
-		\tkzDefMidPoint(A0,A1) \tkzGetPoint{B0'}
-		\tkzInterLC[,/tikz/overlay](W,B0')(W,B') \tkzGetPoints{B6}{B0}
-		\tkzInterCC(W,B')(B',B0) \tkzGetSecondPoint{B11}
-		\tkzInterCC(W,B')(B0,B11) \tkzGetFirstPoint{B1}
-		\tkzInterCC(W,B')(B1,B0) \tkzGetFirstPoint{B2}
-		\tkzInterCC(W,B')(B2,B1) \tkzGetFirstPoint{B3}
-		\tkzInterCC(W,B')(B3,B2) \tkzGetFirstPoint{B4}
-		\tkzInterCC(W,B')(B4,B3) \tkzGetFirstPoint{B5}
-		\tkzInterCC(W,B')(B5,B4) \tkzGetFirstPoint{B6}
-		\tkzInterCC(W,B')(B6,B5) \tkzGetFirstPoint{B7}
-		\tkzInterCC(W,B')(B7,B6) \tkzGetFirstPoint{B8}
-		\tkzInterCC(W,B')(B8,B7) \tkzGetFirstPoint{B9}
-		\tkzInterCC(W,B')(B9,B8) \tkzGetFirstPoint{B10}
-		\tkzDrawSegment(B0,A1)
-		\tkzDrawSegment(A1,B1)
-		\tkzDrawSegment(B1,A2)
-		\tkzDrawSegment(A2,B2)
-		\tkzDrawSegment(B2,A3)
-		\tkzDrawSegment(A3,B3)
-		\tkzDrawSegment(B3,A4)
-		\tkzDrawSegment(A4,B4)
-		\tkzDrawSegment(B4,A5)
-		\tkzDrawSegment(A5,B5)
-		\tkzDrawSegment(B5,A6)
-		\tkzDrawSegment(A6,B6)
-		\tkzDrawSegment(B6,A7)
-		\tkzDrawSegment(A7,B7)
-		\tkzDrawSegment(B7,A8)
-		\tkzDrawSegment(A8,B8)
-		\tkzDrawSegment(B8,A9)
-		\tkzDrawSegment(A9,B9)
-		\tkzDrawSegment(B9,A10)
-		\tkzDrawSegment(A10,B10)
-		\tkzDrawSegment(B10,A11)
-		\tkzDrawSegment(A11,B11)
-		\tkzDrawSegment(B11,A0)
-		\tkzDrawSegment(A0,B0)
+        \tkzInterLC[,/tikz/overlay](R,T)(T,M) \tkzGetFirstPoint{A0}
+        \tkzInterLC[,/tikz/overlay](T,M)(T,R) \tkzGetSecondPoint{M'}
+        \tkzDefMidPoint(M',R)
+        \tkzInterLC[,/tikz/overlay](T,tkzPointResult)(T,M') \tkzGetSecondPoint{A2'}
+        \tkzDefMidPoint(A2',R)
+        \tkzInterLC[,/tikz/overlay](tkzPointResult,T)(T,M) \tkzGetFirstPoint{A1}
+        \tkzDefMidPoint(A1,A0)
+        \tkzInterLC[,/tikz/overlay](tkzPointResult,T)(T,M') \tkzGetFirstPoint{B1}
+        \tkzInterCC(A1,A0)(T,M) \tkzGetFirstPoint{A2}
+        \tkzInterCC(A2,A1)(T,M) \tkzGetFirstPoint{A3}
+        \tkzInterCC(A3,A2)(T,M) \tkzGetFirstPoint{A4}
+        \tkzInterCC(A4,A3)(T,M) \tkzGetFirstPoint{A5}
+        \tkzInterCC(A5,A4)(T,M) \tkzGetFirstPoint{A6}
+        \tkzInterCC(A6,A5)(T,M) \tkzGetFirstPoint{A7}
+        \tkzInterCC(A7,A6)(T,M) \tkzGetFirstPoint{A8}
+        \tkzDefMidPoint(A1,A2)
+        \tkzInterLC[,/tikz/overlay](T,tkzPointResult)(T,M') \tkzGetSecondPoint{B2}
+        \tkzInterCC(B1,B2)(T,M') \tkzGetSecondPoint{B0'}
+        \tkzInterLC[,/tikz/overlay](A0,B0')(L,P) \tkzGetSecondPoint{B0}
+        \tkzInterCC(B2,B1)(T,M') \tkzGetFirstPoint{B3}
+        \tkzInterCC(B3,B2)(T,M') \tkzGetFirstPoint{B4}
+        \tkzInterCC(B4,B3)(T,M') \tkzGetFirstPoint{B5}
+        \tkzInterCC(B5,B4)(T,M') \tkzGetFirstPoint{B6}
+        \tkzInterCC(B6,B5)(T,M') \tkzGetFirstPoint{B7}
+        \tkzInterCC(B7,B6)(T,M') \tkzGetFirstPoint{B8}
+        \tkzInterCC(B8,B7)(T,M') \tkzGetFirstPoint{B9'}
+        \tkzInterLC[,/tikz/overlay](A8,B9')(L,P) \tkzGetFirstPoint{B9}
+        \tkzDrawSegment(B0,A0)
+        \tkzDrawSegment(A0,B1)
+        \tkzDrawSegment(B1,A1)
+        \tkzDrawSegment(A1,B2)
+        \tkzDrawSegment(B2,A2)
+        \tkzDrawSegment(A2,B3)
+        \tkzDrawSegment(B3,A3)
+        \tkzDrawSegment(A3,B4)
+        \tkzDrawSegment(B4,A4)
+        \tkzDrawSegment(A4,B5)
+        \tkzDrawSegment(B5,A5)
+        \tkzDrawSegment(A5,B6)
+        \tkzDrawSegment(B6,A6)
+        \tkzDrawSegment(A6,B7)
+        \tkzDrawSegment(B7,A7)
+        \tkzDrawSegment(A7,B8)
+        \tkzDrawSegment(B8,A8)
+        \tkzDrawSegment(A8,B9)
+        %		
+        %		(C) Method of Making the Sun
+        %		(19) Bisect line AF at U, and draw a line UV parallel to AB line touching line BE at V.
+        \tkzDefMidPoint(A,F) \tkzGetPoint{U}
+        \tkzDefLine[parallel=through U,/tikz/overlay](A,B)
+        \tkzInterLL(U,tkzPointResult)(B,E) \tkzGetPoint{V}
+        \tkzDrawSegment(U,V)
+        %		(20) With center W, the point where HI and UV cut one another and radius MN draw a circle.
+        \tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
+        \tkzDefLine[parallel=through W,/tikz/overlay](M,N) \tkzGetPoint{B'}
+        \tkzDrawCircle(W,B')
+        %		(21) With center W and radius LN draw a circle.
+        \tkzDefLine[parallel=through W,/tikz/overlay](L,N) \tkzGetPoint{A0}
+        \tkzDrawCircle(W,A0)
+        %		(22) Twelve equal and similar triangles of the sun are to be made in the space enclosed by the circle of No (20) and No (21) with the two apexes of two triangles touching line HI.
+        \tkzInterCC(W,A0)(A0,W) \tkzGetPoints{A2}{A10}
+        \tkzDefMidPoint(A0,A2) \tkzGetPoint{A1'}
+        \tkzInterLC[,/tikz/overlay](W,A1')(W,A0) \tkzGetPoints{A7}{A1}
+        \tkzInterCC(W,A2)(A2,A1) \tkzGetFirstPoint{A3}
+        \tkzInterCC(W,A3)(A3,A2) \tkzGetFirstPoint{A4}
+        \tkzInterCC(W,A4)(A4,A3) \tkzGetFirstPoint{A5}
+        \tkzInterCC(W,A5)(A5,A4) \tkzGetFirstPoint{A6}
+        \tkzInterCC(W,A7)(A7,A6) \tkzGetFirstPoint{A8}
+        \tkzInterCC(W,A8)(A8,A7) \tkzGetFirstPoint{A9}
+        \tkzInterCC(W,A10)(A10,A9) \tkzGetFirstPoint{A11}
+        \tkzDefMidPoint(A0,A1) \tkzGetPoint{B0'}
+        \tkzInterLC[,/tikz/overlay](W,B0')(W,B') \tkzGetPoints{B6}{B0}
+        \tkzInterCC(W,B')(B',B0) \tkzGetSecondPoint{B11}
+        \tkzInterCC(W,B')(B0,B11) \tkzGetFirstPoint{B1}
+        \tkzInterCC(W,B')(B1,B0) \tkzGetFirstPoint{B2}
+        \tkzInterCC(W,B')(B2,B1) \tkzGetFirstPoint{B3}
+        \tkzInterCC(W,B')(B3,B2) \tkzGetFirstPoint{B4}
+        \tkzInterCC(W,B')(B4,B3) \tkzGetFirstPoint{B5}
+        \tkzInterCC(W,B')(B5,B4) \tkzGetFirstPoint{B6}
+        \tkzInterCC(W,B')(B6,B5) \tkzGetFirstPoint{B7}
+        \tkzInterCC(W,B')(B7,B6) \tkzGetFirstPoint{B8}
+        \tkzInterCC(W,B')(B8,B7) \tkzGetFirstPoint{B9}
+        \tkzInterCC(W,B')(B9,B8) \tkzGetFirstPoint{B10}
+        \tkzDrawSegment(B0,A1)
+        \tkzDrawSegment(A1,B1)
+        \tkzDrawSegment(B1,A2)
+        \tkzDrawSegment(A2,B2)
+        \tkzDrawSegment(B2,A3)
+        \tkzDrawSegment(A3,B3)
+        \tkzDrawSegment(B3,A4)
+        \tkzDrawSegment(A4,B4)
+        \tkzDrawSegment(B4,A5)
+        \tkzDrawSegment(A5,B5)
+        \tkzDrawSegment(B5,A6)
+        \tkzDrawSegment(A6,B6)
+        \tkzDrawSegment(B6,A7)
+        \tkzDrawSegment(A7,B7)
+        \tkzDrawSegment(B7,A8)
+        \tkzDrawSegment(A8,B8)
+        \tkzDrawSegment(B8,A9)
+        \tkzDrawSegment(A9,B9)
+        \tkzDrawSegment(B9,A10)
+        \tkzDrawSegment(A10,B10)
+        \tkzDrawSegment(B10,A11)
+        \tkzDrawSegment(A11,B11)
+        \tkzDrawSegment(B11,A0)
+        \tkzDrawSegment(A0,B0)
 %		\tkzFillPolygon[color=blue](B0,A1,B1,A2,B2,A3,B3,A4,B4,A5,B5,A6,B6,A7,B7,A8,B8,A9,B9,A10,B10,A11,B11,A0)
-	
-	
+
+
 %		(D) Method of Making the Border
 %		(23) The width of the border will be equal to the width of TN. This will be of deep blue color and will be provided on all the sides of the flag. However, on the given angles of the flag the external angles will be equal to the internal angles.
         \tkzDrawSegment[red](T,N)
-		\tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
-		\tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
-		\tkzDrawSegment[dashed](a1,a2)
+        \tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
+        \tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
+        \tkzDrawSegment[dashed](a1,a2)
 %		\tkzDefLine[parallel=through T]()
-		\tkzDefLine[perpendicular=through T,/tikz/overlay](B,D)
-		\tkzInterLC(T,tkzPointResult)(T,N) \tkzGetFirstPoint{b'}
+        \tkzDefLine[perpendicular=through T,/tikz/overlay](B,D)
+        \tkzInterLC(T,tkzPointResult)(T,N) \tkzGetFirstPoint{b'}
 %		\tkzDrawPoint(b')
-		\tkzDefLine[parallel=through B,/tikz/overlay](T,b') \tkzGetPoint{b1}
-		\tkzDefLine[parallel=through b1,/tikz/overlay](B,D) \tkzGetPoint{b2}
-		\tkzDrawSegment[dashed](b1,b2)
+        \tkzDefLine[parallel=through B,/tikz/overlay](T,b') \tkzGetPoint{b1}
+        \tkzDefLine[parallel=through b1,/tikz/overlay](B,D) \tkzGetPoint{b2}
+        \tkzDrawSegment[dashed](b1,b2)
 %		\tkzDrawSegment[red](b1,B)
-		%\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
+%\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
         \tkzInterLL(a1,a2)(b1,b2) \tkzGetPoint{ab}
         \tkzDrawSegment[dashed](a2,ab)
         \tkzDrawSegment[dashed](b1,ab)
@@ -218,8 +218,8 @@
 
 %		(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
 %		Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.
-	
-	\end{tikzpicture}
+
+    \end{tikzpicture}
 \end{center}
 \end{document}
 % http://www.servat.unibe.ch/icl/np01000_.html

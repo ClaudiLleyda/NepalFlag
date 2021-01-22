@@ -207,6 +207,14 @@
         \tkzInterLL(c3,c4)(b1,b2) \tkzGetPoint{c5}
         \tkzInterLL(c3,c4)(C,G) \tkzGetPoint{c6}
         \tkzDrawSegment[dashed](c5,c6)
+        \tkzDefLine[perpendicular=through T,/tikz/overlay](C,A)
+        \tkzInterLL(C,A)(T,tkzPointResult) \tkzGetPoint{d1}
+        \tkzDefLine[perpendicular=through N,/tikz/overlay](C,A)
+        \tkzInterLL(C,A)(N,tkzPointResult) \tkzGetPoint{d2}
+        \tkzInterLC(T,d1)(d1,d2) \tkzGetSecondPoint{d3}
+        \tkzDefLine[parallel=through d3,/tikz/overlay](C,A) \tkzGetPoint{d4}
+        \tkzInterLL(d3,d4)(a1,a2) \tkzGetPoint{d5}
+        \tkzDrawSegment[dashed](d3,d5)
 
 %		(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
 %		Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.

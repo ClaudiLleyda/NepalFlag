@@ -4,74 +4,74 @@
 \begin{document}
 \pagestyle{empty}
 \begin{center}
-%	\setlength{\unitlength}{\textwidth}
+    %\setlength{\unitlength}{\textwidth}
     \begin{tikzpicture}
-%		(A) Method of Making the shape inside the Border
-%		(1) On the lower portion of a crimson cloth draw a line AB of the required length from left to right.
-%		\tkzDefPoint(-1,-1){Test}
+        %(A) Method of Making the shape inside the Border
+        %(1) On the lower portion of a crimson cloth draw a line AB of the required length from left to right.
+        %\tkzDefPoint(-1,-1){Test}
         \tkzDefPoint(0,0){A}
         \tkzDefPoint(10,0){B}
         \tkzDrawSegment(A,B)
-%		(2) From A draw a line AC perpendicular to AB making AC equal to AB plus one third AB. From AC mark off D making the line AD equal to line AB. Join BD.
+        %(2) From A draw a line AC perpendicular to AB making AC equal to AB plus one third AB. From AC mark off D making the line AD equal to line AB. Join BD.
         \tkzDefLine[perpendicular=through A, K=4/3](A,B) \tkzGetPoint{C}
         \tkzDrawSegment(A,C)
         \tkzDefLine[perpendicular=through A, K=1](A,B) \tkzGetPoint{D}
         %\tkzDrawSegment(B,D)
-%		(3) From BD mark off E making BE equal to AB.
+        %(3) From BD mark off E making BE equal to AB.
         \tkzInterLC[,/tikz/overlay](B,D)(B,A) \tkzGetSecondPoint{E}
         \tkzDrawSegment(B,E)
-%		(4) Touching E draw a line FG, starting from the point F on line AC, parallel to AB to the right hand-side. Mark off FG equal to AB.
+        %(4) Touching E draw a line FG, starting from the point F on line AC, parallel to AB to the right hand-side. Mark off FG equal to AB.
         \tkzDefLine[parallel=through E,/tikz/overlay](A,B)
         \tkzInterLL(A,C)(E,tkzPointResult) \tkzGetPoint{F}
         \tkzDefLine[parallel=through F,/tikz/overlay](A,B) \tkzGetPoint{G}
         %\tkzDrawSegment(F,G)
         \tkzDrawSegment(E,G)
-%		(5) Join CG.
+        %(5) Join CG.
         \tkzDrawSegment(C,G)
-%		
-%		(B) Method of making the Moon
-%		(6) From AB mark off AH making AH equal to one-fourth of line AB and starting from H draw a line HI parallel to line AC touching line CG at point I.
+
+        %(B) Method of making the Moon
+        %(6) From AB mark off AH making AH equal to one-fourth of line AB and starting from H draw a line HI parallel to line AC touching line CG at point I.
         \tkzDefMidPoint(A,B)
         \tkzDefMidPoint(A,tkzPointResult) \tkzGetPoint{H}
         \tkzDefLine[parallel=through H,/tikz/overlay](A,C)
         \tkzInterLL(H,tkzPointResult)(C,G) \tkzGetPoint{I}
         %\tkzDrawSegment(H,I)
-%		(7) Bisect CF at J and draw a line JK parallel to AB touching CG at point K.
+        %(7) Bisect CF at J and draw a line JK parallel to AB touching CG at point K.
         \tkzDefMidPoint(C,F) \tkzGetPoint{J}
         \tkzDefLine[parallel=through J,/tikz/overlay](A,B)
         \tkzInterLL(J,tkzPointResult)(C,G) \tkzGetPoint{K}
         %\tkzDrawSegment(J,K)
-%		(8) Let L be the point where lines JK and HI cut one another.
+        %(8) Let L be the point where lines JK and HI cut one another.
         \tkzInterLL(J,K)(H,I) \tkzGetPoint{L}
-%		(9) Join JG.
+        %(9) Join JG.
         %\tkzDrawSegment(J,G)
-%		(10) Let M be the point where line JG and HI cut one another.
+        %(10) Let M be the point where line JG and HI cut one another.
         \tkzInterLL(J,G)(H,I) \tkzGetPoint{M}
-%		(11) With center M and with a distance shortest from M to BD mark off N on the lower portion of line HI.
+        %(11) With center M and with a distance shortest from M to BD mark off N on the lower portion of line HI.
         \tkzDefLine[perpendicular=through M,/tikz/overlay](B,D)
         \tkzInterLL(tkzPointResult,M)(B,D)
         \tkzInterLC[/tikz/overlay](H,I)(M,tkzPointResult) \tkzGetFirstPoint{N}
-%		(12) Touching M and starting from O, a point on AC, draw a line from left to right parallel to AB.
+        %(12) Touching M and starting from O, a point on AC, draw a line from left to right parallel to AB.
         \tkzDefLine[parallel=through M,/tikz/overlay](A,B)
         \tkzInterLL(A,C)(tkzPointResult,M) \tkzGetPoint{O}
         \tkzInterLL(O,M)(C,G)
         %\tkzDrawSegment(O,tkzPointResult)
-%		(13) With center L and radius LN draw a semi-circle on the lower portion and let P and Q be the points where it touches the line OM respectively.
+        %(13) With center L and radius LN draw a semi-circle on the lower portion and let P and Q be the points where it touches the line OM respectively.
         \tkzInterLC[,/tikz/overlay](O,M)(L,N) \tkzGetPoints{Q}{P}
-%		\tkzDrawCircle[dashed](L,P)
+        %\tkzDrawCircle[dashed](L,P)
         \tkzDrawArc[color=black](L,P)(Q)
-%		(14) With the center M and radius MQ draw a semi-circle on the lower portion touching P and Q.
+        %(14) With the center M and radius MQ draw a semi-circle on the lower portion touching P and Q.
         \tkzDrawArc[color=black](M,P)(Q)
-%		(15) With center N and radius NM draw an arc touching PNQ at R and S. Join RS. Let T be the point where RS and HI cut one another.
+        %(15) With center N and radius NM draw an arc touching PNQ at R and S. Join RS. Let T be the point where RS and HI cut one another.
         \tkzInterCC(N,M)(L,P) \tkzGetPoints{R}{S}
-%		\tkzDrawArc(N,S)(R)
+        %\tkzDrawArc(N,S)(R)
         \tkzInterLL(R,S)(I,H) \tkzGetPoint{T}
-%		(16) With center T and radius TS draw a semi-circle on the upper portion of PNQ touching at two points.
+        %(16) With center T and radius TS draw a semi-circle on the upper portion of PNQ touching at two points.
         %\tkzDrawArc(T,S)(R)
-%		(17) With center T and radius TM draw an arc on the upper portion of PNQ touching at two points.
+        %(17) With center T and radius TM draw an arc on the upper portion of PNQ touching at two points.
         \tkzInterCC(T,M)(L,P) \tkzGetPoints{P'}{Q'}
         %\tkzDrawArc(T,Q')(P')
-%		(18) Eight equal and similar triangles of the moon are to be made in the space lying inside the semi-circle of No (16) and outside the arc of No (17) of his Schedule.
+        %(18) Eight equal and similar triangles of the moon are to be made in the space lying inside the semi-circle of No (16) and outside the arc of No (17) of his Schedule.
         \tkzInterLC[,/tikz/overlay](R,T)(T,M) \tkzGetFirstPoint{A0}
         \tkzInterLC[,/tikz/overlay](T,M)(T,R) \tkzGetSecondPoint{M'}
         \tkzDefMidPoint(M',R)
@@ -179,24 +179,24 @@
         \tkzDrawSegment(A11,B11)
         \tkzDrawSegment(B11,A0)
         \tkzDrawSegment(A0,B0)
-%		\tkzFillPolygon[color=blue](B0,A1,B1,A2,B2,A3,B3,A4,B4,A5,B5,A6,B6,A7,B7,A8,B8,A9,B9,A10,B10,A11,B11,A0)
+        %\tkzFillPolygon[color=blue](B0,A1,B1,A2,B2,A3,B3,A4,B4,A5,B5,A6,B6,A7,B7,A8,B8,A9,B9,A10,B10,A11,B11,A0)
 
 
-%		(D) Method of Making the Border
-%		(23) The width of the border will be equal to the width of TN. This will be of deep blue color and will be provided on all the sides of the flag. However, on the given angles of the flag the external angles will be equal to the internal angles.
+        %(D) Method of Making the Border
+        %(23) The width of the border will be equal to the width of TN. This will be of deep blue color and will be provided on all the sides of the flag. However, on the given angles of the flag the external angles will be equal to the internal angles.
         %\tkzDrawSegment[red](T,N)
         \tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
         \tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
         %\tkzDrawSegment[dashed](a1,a2)
-%		\tkzDefLine[parallel=through T]()
+        %\tkzDefLine[parallel=through T]()
         \tkzDefLine[perpendicular=through T,/tikz/overlay](B,D)
         \tkzInterLC(T,tkzPointResult)(T,N) \tkzGetFirstPoint{b'}
-%		\tkzDrawPoint(b')
+        %\tkzDrawPoint(b')
         \tkzDefLine[parallel=through B,/tikz/overlay](T,b') \tkzGetPoint{b1}
         \tkzDefLine[parallel=through b1,/tikz/overlay](B,D) \tkzGetPoint{b2}
         %\tkzDrawSegment[dashed](b1,b2)
         %\tkzDrawSegment[red](b1,B)
-%       \tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
+        %\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
         \tkzInterLL(a1,a2)(b1,b2) \tkzGetPoint{ab}
         %\tkzDrawSegment[dashed](a2,ab)
         %\tkzDrawSegment[dashed](b1,ab)
@@ -234,8 +234,8 @@
         \tkzDrawSegment(ab,cb)
         \tkzDrawSegment(cb,ec)
 
-%		(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
-%		Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.
+        %(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
+        %Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.
 
     \end{tikzpicture}
 \end{center}

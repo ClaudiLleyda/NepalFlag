@@ -16,14 +16,16 @@
         \tkzDefLine[perpendicular=through A, K=4/3](A,B) \tkzGetPoint{C}
         \tkzDrawSegment(A,C)
         \tkzDefLine[perpendicular=through A, K=1](A,B) \tkzGetPoint{D}
-        \tkzDrawSegment(B,D)
+        %\tkzDrawSegment(B,D)
 %		(3) From BD mark off E making BE equal to AB.
         \tkzInterLC[,/tikz/overlay](B,D)(B,A) \tkzGetSecondPoint{E}
+        \tkzDrawSegment(B,E)
 %		(4) Touching E draw a line FG, starting from the point F on line AC, parallel to AB to the right hand-side. Mark off FG equal to AB.
         \tkzDefLine[parallel=through E,/tikz/overlay](A,B)
         \tkzInterLL(A,C)(E,tkzPointResult) \tkzGetPoint{F}
         \tkzDefLine[parallel=through F,/tikz/overlay](A,B) \tkzGetPoint{G}
-        \tkzDrawSegment(F,G)
+        %\tkzDrawSegment(F,G)
+        \tkzDrawSegment(E,G)
 %		(5) Join CG.
         \tkzDrawSegment(C,G)
 %		
@@ -33,16 +35,16 @@
         \tkzDefMidPoint(A,tkzPointResult) \tkzGetPoint{H}
         \tkzDefLine[parallel=through H,/tikz/overlay](A,C)
         \tkzInterLL(H,tkzPointResult)(C,G) \tkzGetPoint{I}
-        \tkzDrawSegment(H,I)
+        %\tkzDrawSegment(H,I)
 %		(7) Bisect CF at J and draw a line JK parallel to AB touching CG at point K.
         \tkzDefMidPoint(C,F) \tkzGetPoint{J}
         \tkzDefLine[parallel=through J,/tikz/overlay](A,B)
         \tkzInterLL(J,tkzPointResult)(C,G) \tkzGetPoint{K}
-        \tkzDrawSegment(J,K)
+        %\tkzDrawSegment(J,K)
 %		(8) Let L be the point where lines JK and HI cut one another.
         \tkzInterLL(J,K)(H,I) \tkzGetPoint{L}
 %		(9) Join JG.
-        \tkzDrawSegment(J,G)
+        %\tkzDrawSegment(J,G)
 %		(10) Let M be the point where line JG and HI cut one another.
         \tkzInterLL(J,G)(H,I) \tkzGetPoint{M}
 %		(11) With center M and with a distance shortest from M to BD mark off N on the lower portion of line HI.
@@ -53,22 +55,22 @@
         \tkzDefLine[parallel=through M,/tikz/overlay](A,B)
         \tkzInterLL(A,C)(tkzPointResult,M) \tkzGetPoint{O}
         \tkzInterLL(O,M)(C,G)
-        \tkzDrawSegment(O,tkzPointResult)
+        %\tkzDrawSegment(O,tkzPointResult)
 %		(13) With center L and radius LN draw a semi-circle on the lower portion and let P and Q be the points where it touches the line OM respectively.
         \tkzInterLC[,/tikz/overlay](O,M)(L,N) \tkzGetPoints{Q}{P}
 %		\tkzDrawCircle[dashed](L,P)
-        \tkzDrawArc(L,P)(Q)
+        \tkzDrawArc[color=black](L,P)(Q)
 %		(14) With the center M and radius MQ draw a semi-circle on the lower portion touching P and Q.
-        \tkzDrawArc(M,P)(Q)
+        \tkzDrawArc[color=black](M,P)(Q)
 %		(15) With center N and radius NM draw an arc touching PNQ at R and S. Join RS. Let T be the point where RS and HI cut one another.
         \tkzInterCC(N,M)(L,P) \tkzGetPoints{R}{S}
 %		\tkzDrawArc(N,S)(R)
         \tkzInterLL(R,S)(I,H) \tkzGetPoint{T}
 %		(16) With center T and radius TS draw a semi-circle on the upper portion of PNQ touching at two points.
-        \tkzDrawArc(T,S)(R)
+        %\tkzDrawArc(T,S)(R)
 %		(17) With center T and radius TM draw an arc on the upper portion of PNQ touching at two points.
         \tkzInterCC(T,M)(L,P) \tkzGetPoints{P'}{Q'}
-        \tkzDrawArc(T,Q')(P')
+        %\tkzDrawArc(T,Q')(P')
 %		(18) Eight equal and similar triangles of the moon are to be made in the space lying inside the semi-circle of No (16) and outside the arc of No (17) of his Schedule.
         \tkzInterLC[,/tikz/overlay](R,T)(T,M) \tkzGetFirstPoint{A0}
         \tkzInterLC[,/tikz/overlay](T,M)(T,R) \tkzGetSecondPoint{M'}
@@ -121,14 +123,14 @@
         \tkzDefMidPoint(A,F) \tkzGetPoint{U}
         \tkzDefLine[parallel=through U,/tikz/overlay](A,B)
         \tkzInterLL(U,tkzPointResult)(B,E) \tkzGetPoint{V}
-        \tkzDrawSegment(U,V)
+        %\tkzDrawSegment(U,V)
         %		(20) With center W, the point where HI and UV cut one another and radius MN draw a circle.
         \tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
         \tkzDefLine[parallel=through W,/tikz/overlay](M,N) \tkzGetPoint{B'}
-        \tkzDrawCircle(W,B')
+        %\tkzDrawCircle(W,B')
         %		(21) With center W and radius LN draw a circle.
         \tkzDefLine[parallel=through W,/tikz/overlay](L,N) \tkzGetPoint{A0}
-        \tkzDrawCircle(W,A0)
+        %\tkzDrawCircle(W,A0)
         %		(22) Twelve equal and similar triangles of the sun are to be made in the space enclosed by the circle of No (20) and No (21) with the two apexes of two triangles touching line HI.
         \tkzInterCC(W,A0)(A0,W) \tkzGetPoints{A2}{A10}
         \tkzDefMidPoint(A0,A2) \tkzGetPoint{A1'}
@@ -182,7 +184,7 @@
 
 %		(D) Method of Making the Border
 %		(23) The width of the border will be equal to the width of TN. This will be of deep blue color and will be provided on all the sides of the flag. However, on the given angles of the flag the external angles will be equal to the internal angles.
-        \tkzDrawSegment[red](T,N)
+        %\tkzDrawSegment[red](T,N)
         \tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
         \tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
         %\tkzDrawSegment[dashed](a1,a2)

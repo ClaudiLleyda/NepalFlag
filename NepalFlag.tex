@@ -185,19 +185,19 @@
         \tkzDrawSegment[red](T,N)
         \tkzDefLine[parallel=through A,/tikz/overlay](T,N) \tkzGetPoint{a1}
         \tkzDefLine[parallel=through a1,/tikz/overlay](A,B) \tkzGetPoint{a2}
-        \tkzDrawSegment[dashed](a1,a2)
+        %\tkzDrawSegment[dashed](a1,a2)
 %		\tkzDefLine[parallel=through T]()
         \tkzDefLine[perpendicular=through T,/tikz/overlay](B,D)
         \tkzInterLC(T,tkzPointResult)(T,N) \tkzGetFirstPoint{b'}
 %		\tkzDrawPoint(b')
         \tkzDefLine[parallel=through B,/tikz/overlay](T,b') \tkzGetPoint{b1}
         \tkzDefLine[parallel=through b1,/tikz/overlay](B,D) \tkzGetPoint{b2}
-        \tkzDrawSegment[dashed](b1,b2)
-%		\tkzDrawSegment[red](b1,B)
-%\tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
+        %\tkzDrawSegment[dashed](b1,b2)
+        %\tkzDrawSegment[red](b1,B)
+%       \tkzInterLL(H,I)(U,V) \tkzGetPoint{W}
         \tkzInterLL(a1,a2)(b1,b2) \tkzGetPoint{ab}
-        \tkzDrawSegment[dashed](a2,ab)
-        \tkzDrawSegment[dashed](b1,ab)
+        %\tkzDrawSegment[dashed](a2,ab)
+        %\tkzDrawSegment[dashed](b1,ab)
         \tkzDefLine[parallel=through T,/tikz/overlay](J,G)
         \tkzInterLL(G,F)(T,tkzPointResult) \tkzGetPoint{c1}
         \tkzDefLine[parallel=through N,/tikz/overlay](J,G) \tkzGetPoint{c2}
@@ -206,15 +206,31 @@
         \tkzDefLine[parallel=through c3,/tikz/overlay](F,G) \tkzGetPoint{c4}
         \tkzInterLL(c3,c4)(b1,b2) \tkzGetPoint{c5}
         \tkzInterLL(c3,c4)(C,G) \tkzGetPoint{c6}
-        \tkzDrawSegment[dashed](c5,c6)
+        %\tkzDrawSegment[dashed](c5,c6)
         \tkzDefLine[perpendicular=through T,/tikz/overlay](C,A)
         \tkzInterLL(C,A)(T,tkzPointResult) \tkzGetPoint{d1}
         \tkzDefLine[perpendicular=through N,/tikz/overlay](C,A)
         \tkzInterLL(C,A)(N,tkzPointResult) \tkzGetPoint{d2}
         \tkzInterLC(T,d1)(d1,d2) \tkzGetSecondPoint{d3}
         \tkzDefLine[parallel=through d3,/tikz/overlay](C,A) \tkzGetPoint{d4}
-        \tkzInterLL(d3,d4)(a1,a2) \tkzGetPoint{d5}
-        \tkzDrawSegment[dashed](d3,d5)
+        \tkzInterLL(d3,d4)(a1,a2) \tkzGetPoint{da}
+        %\tkzDrawSegment[dashed](d3,da)
+        \tkzDefLine[parallel=through T,/tikz/overlay](C,G) \tkzGetPoint{e1}
+        \tkzInterLC(T,e1)(T,N) \tkzGetSecondPoint{e2}
+        \tkzDefLine[perpendicular=through T,/tikz/overlay](C,G)
+        \tkzInterLL(C,G)(T,tkzPointResult) \tkzGetPoint{e3}
+        \tkzDefLine[perpendicular=through N,/tikz/overlay](C,G)
+        \tkzInterLL(C,G)(e2,tkzPointResult) \tkzGetPoint{e4}
+        \tkzInterLC(T,e3)(e3,e4) \tkzGetSecondPoint{e5}
+        \tkzDefLine[parallel=through e5,/tikz/overlay](C,G) \tkzGetPoint{e6}
+        \tkzInterLL(d3,da)(e5,e6) \tkzGetPoint{ed}
+        \tkzInterLL(c5,c6)(e5,e6) \tkzGetPoint{ec}
+        \tkzInterLL(c5,c6)(b1,b2) \tkzGetPoint{cb}
+        \tkzDrawSegment(ec,ed)
+        \tkzDrawSegment(ed,da)
+        \tkzDrawSegment(da,ab)
+        \tkzDrawSegment(ab,cb)
+        \tkzDrawSegment(cb,ec)
 
 %		(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
 %		Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.

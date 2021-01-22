@@ -11,23 +11,23 @@
         %\tkzDefPoint(-1,-1){Test}
         \tkzDefPoint(0,0){A}
         \tkzDefPoint(10,0){B}
-        \tkzDrawSegment(A,B)
+        %\tkzDrawSegment(A,B)
         %(2) From A draw a line AC perpendicular to AB making AC equal to AB plus one third AB. From AC mark off D making the line AD equal to line AB. Join BD.
         \tkzDefLine[perpendicular=through A, K=4/3](A,B) \tkzGetPoint{C}
-        \tkzDrawSegment(A,C)
+        %\tkzDrawSegment(A,C)
         \tkzDefLine[perpendicular=through A, K=1](A,B) \tkzGetPoint{D}
         %\tkzDrawSegment(B,D)
         %(3) From BD mark off E making BE equal to AB.
         \tkzInterLC[,/tikz/overlay](B,D)(B,A) \tkzGetSecondPoint{E}
-        \tkzDrawSegment(B,E)
+        %\tkzDrawSegment(B,E)
         %(4) Touching E draw a line FG, starting from the point F on line AC, parallel to AB to the right hand-side. Mark off FG equal to AB.
         \tkzDefLine[parallel=through E,/tikz/overlay](A,B)
         \tkzInterLL(A,C)(E,tkzPointResult) \tkzGetPoint{F}
         \tkzDefLine[parallel=through F,/tikz/overlay](A,B) \tkzGetPoint{G}
         %\tkzDrawSegment(F,G)
-        \tkzDrawSegment(E,G)
+        %\tkzDrawSegment(E,G)
         %(5) Join CG.
-        \tkzDrawSegment(C,G)
+        %\tkzDrawSegment(C,G)
 
         %(B) Method of making the Moon
         %(6) From AB mark off AH making AH equal to one-fourth of line AB and starting from H draw a line HI parallel to line AC touching line CG at point I.
@@ -59,9 +59,9 @@
         %(13) With center L and radius LN draw a semi-circle on the lower portion and let P and Q be the points where it touches the line OM respectively.
         \tkzInterLC[,/tikz/overlay](O,M)(L,N) \tkzGetPoints{Q}{P}
         %\tkzDrawCircle[dashed](L,P)
-        \tkzDrawArc[color=black](L,P)(Q)
+        %\tkzDrawArc[color=black](L,P)(Q)
         %(14) With the center M and radius MQ draw a semi-circle on the lower portion touching P and Q.
-        \tkzDrawArc[color=black](M,P)(Q)
+        %\tkzDrawArc[color=black](M,P)(Q)
         %(15) With center N and radius NM draw an arc touching PNQ at R and S. Join RS. Let T be the point where RS and HI cut one another.
         \tkzInterCC(N,M)(L,P) \tkzGetPoints{R}{S}
         %\tkzDrawArc(N,S)(R)
@@ -99,24 +99,24 @@
         \tkzInterCC(B7,B6)(T,M') \tkzGetFirstPoint{B8}
         \tkzInterCC(B8,B7)(T,M') \tkzGetFirstPoint{B9'}
         \tkzInterLC[,/tikz/overlay](A8,B9')(L,P) \tkzGetFirstPoint{B9}
-        \tkzDrawSegment(B0,A0)
-        \tkzDrawSegment(A0,B1)
-        \tkzDrawSegment(B1,A1)
-        \tkzDrawSegment(A1,B2)
-        \tkzDrawSegment(B2,A2)
-        \tkzDrawSegment(A2,B3)
-        \tkzDrawSegment(B3,A3)
-        \tkzDrawSegment(A3,B4)
-        \tkzDrawSegment(B4,A4)
-        \tkzDrawSegment(A4,B5)
-        \tkzDrawSegment(B5,A5)
-        \tkzDrawSegment(A5,B6)
-        \tkzDrawSegment(B6,A6)
-        \tkzDrawSegment(A6,B7)
-        \tkzDrawSegment(B7,A7)
-        \tkzDrawSegment(A7,B8)
-        \tkzDrawSegment(B8,A8)
-        \tkzDrawSegment(A8,B9)
+        %\tkzDrawSegment(B0,A0)
+        %\tkzDrawSegment(A0,B1)
+        %\tkzDrawSegment(B1,A1)
+        %\tkzDrawSegment(A1,B2)
+        %\tkzDrawSegment(B2,A2)
+        %\tkzDrawSegment(A2,B3)
+        %\tkzDrawSegment(B3,A3)
+        %\tkzDrawSegment(A3,B4)
+        %\tkzDrawSegment(B4,A4)
+        %\tkzDrawSegment(A4,B5)
+        %\tkzDrawSegment(B5,A5)
+        %\tkzDrawSegment(A5,B6)
+        %\tkzDrawSegment(B6,A6)
+        %\tkzDrawSegment(A6,B7)
+        %\tkzDrawSegment(B7,A7)
+        %\tkzDrawSegment(A7,B8)
+        %\tkzDrawSegment(B8,A8)
+        %\tkzDrawSegment(A8,B9)
         %		
         %		(C) Method of Making the Sun
         %		(19) Bisect line AF at U, and draw a line UV parallel to AB line touching line BE at V.
@@ -129,57 +129,57 @@
         \tkzDefLine[parallel=through W,/tikz/overlay](M,N) \tkzGetPoint{B'}
         %\tkzDrawCircle(W,B')
         %		(21) With center W and radius LN draw a circle.
-        \tkzDefLine[parallel=through W,/tikz/overlay](L,N) \tkzGetPoint{A0}
-        %\tkzDrawCircle(W,A0)
+        \tkzDefLine[parallel=through W,/tikz/overlay](L,N) \tkzGetPoint{A'0}
+        %\tkzDrawCircle(W,A'0)
         %		(22) Twelve equal and similar triangles of the sun are to be made in the space enclosed by the circle of No (20) and No (21) with the two apexes of two triangles touching line HI.
-        \tkzInterCC(W,A0)(A0,W) \tkzGetPoints{A2}{A10}
-        \tkzDefMidPoint(A0,A2) \tkzGetPoint{A1'}
-        \tkzInterLC[,/tikz/overlay](W,A1')(W,A0) \tkzGetPoints{A7}{A1}
-        \tkzInterCC(W,A2)(A2,A1) \tkzGetFirstPoint{A3}
-        \tkzInterCC(W,A3)(A3,A2) \tkzGetFirstPoint{A4}
-        \tkzInterCC(W,A4)(A4,A3) \tkzGetFirstPoint{A5}
-        \tkzInterCC(W,A5)(A5,A4) \tkzGetFirstPoint{A6}
-        \tkzInterCC(W,A7)(A7,A6) \tkzGetFirstPoint{A8}
-        \tkzInterCC(W,A8)(A8,A7) \tkzGetFirstPoint{A9}
-        \tkzInterCC(W,A10)(A10,A9) \tkzGetFirstPoint{A11}
-        \tkzDefMidPoint(A0,A1) \tkzGetPoint{B0'}
-        \tkzInterLC[,/tikz/overlay](W,B0')(W,B') \tkzGetPoints{B6}{B0}
-        \tkzInterCC(W,B')(B',B0) \tkzGetSecondPoint{B11}
-        \tkzInterCC(W,B')(B0,B11) \tkzGetFirstPoint{B1}
-        \tkzInterCC(W,B')(B1,B0) \tkzGetFirstPoint{B2}
-        \tkzInterCC(W,B')(B2,B1) \tkzGetFirstPoint{B3}
-        \tkzInterCC(W,B')(B3,B2) \tkzGetFirstPoint{B4}
-        \tkzInterCC(W,B')(B4,B3) \tkzGetFirstPoint{B5}
-        \tkzInterCC(W,B')(B5,B4) \tkzGetFirstPoint{B6}
-        \tkzInterCC(W,B')(B6,B5) \tkzGetFirstPoint{B7}
-        \tkzInterCC(W,B')(B7,B6) \tkzGetFirstPoint{B8}
-        \tkzInterCC(W,B')(B8,B7) \tkzGetFirstPoint{B9}
-        \tkzInterCC(W,B')(B9,B8) \tkzGetFirstPoint{B10}
-        \tkzDrawSegment(B0,A1)
-        \tkzDrawSegment(A1,B1)
-        \tkzDrawSegment(B1,A2)
-        \tkzDrawSegment(A2,B2)
-        \tkzDrawSegment(B2,A3)
-        \tkzDrawSegment(A3,B3)
-        \tkzDrawSegment(B3,A4)
-        \tkzDrawSegment(A4,B4)
-        \tkzDrawSegment(B4,A5)
-        \tkzDrawSegment(A5,B5)
-        \tkzDrawSegment(B5,A6)
-        \tkzDrawSegment(A6,B6)
-        \tkzDrawSegment(B6,A7)
-        \tkzDrawSegment(A7,B7)
-        \tkzDrawSegment(B7,A8)
-        \tkzDrawSegment(A8,B8)
-        \tkzDrawSegment(B8,A9)
-        \tkzDrawSegment(A9,B9)
-        \tkzDrawSegment(B9,A10)
-        \tkzDrawSegment(A10,B10)
-        \tkzDrawSegment(B10,A11)
-        \tkzDrawSegment(A11,B11)
-        \tkzDrawSegment(B11,A0)
-        \tkzDrawSegment(A0,B0)
-        %\tkzFillPolygon[color=blue](B0,A1,B1,A2,B2,A3,B3,A4,B4,A5,B5,A6,B6,A7,B7,A8,B8,A9,B9,A10,B10,A11,B11,A0)
+        \tkzInterCC(W,A'0)(A'0,W) \tkzGetPoints{A'2}{A'10}
+        \tkzDefMidPoint(A'0,A'2) \tkzGetPoint{A1'}
+        \tkzInterLC[,/tikz/overlay](W,A1')(W,A'0) \tkzGetPoints{A'7}{A'1}
+        \tkzInterCC(W,A'2)(A'2,A'1) \tkzGetFirstPoint{A'3}
+        \tkzInterCC(W,A'3)(A'3,A'2) \tkzGetFirstPoint{A'4}
+        \tkzInterCC(W,A'4)(A'4,A'3) \tkzGetFirstPoint{A'5}
+        \tkzInterCC(W,A'5)(A'5,A'4) \tkzGetFirstPoint{A'6}
+        \tkzInterCC(W,A'7)(A'7,A'6) \tkzGetFirstPoint{A'8}
+        \tkzInterCC(W,A'8)(A'8,A'7) \tkzGetFirstPoint{A'9}
+        \tkzInterCC(W,A'10)(A'10,A'9) \tkzGetFirstPoint{A'11}
+        \tkzDefMidPoint(A'0,A'1) \tkzGetPoint{B0'}
+        \tkzInterLC[,/tikz/overlay](W,B0')(W,B') \tkzGetPoints{B'6}{B'0}
+        \tkzInterCC(W,B')(B',B'0) \tkzGetSecondPoint{B'11}
+        \tkzInterCC(W,B')(B'0,B'11) \tkzGetFirstPoint{B'1}
+        \tkzInterCC(W,B')(B'1,B'0) \tkzGetFirstPoint{B'2}
+        \tkzInterCC(W,B')(B'2,B'1) \tkzGetFirstPoint{B'3}
+        \tkzInterCC(W,B')(B'3,B'2) \tkzGetFirstPoint{B'4}
+        \tkzInterCC(W,B')(B'4,B'3) \tkzGetFirstPoint{B'5}
+        \tkzInterCC(W,B')(B'5,B'4) \tkzGetFirstPoint{B'6}
+        \tkzInterCC(W,B')(B'6,B'5) \tkzGetFirstPoint{B'7}
+        \tkzInterCC(W,B')(B'7,B'6) \tkzGetFirstPoint{B'8}
+        \tkzInterCC(W,B')(B'8,B'7) \tkzGetFirstPoint{B'9}
+        \tkzInterCC(W,B')(B'9,B'8) \tkzGetFirstPoint{B'10}
+        %\tkzDrawSegment(B'0,A'1)
+        %\tkzDrawSegment(A'1,B'1)
+        %\tkzDrawSegment(B'1,A'2)
+        %\tkzDrawSegment(A'2,B'2)
+        %\tkzDrawSegment(B'2,A'3)
+        %\tkzDrawSegment(A'3,B'3)
+        %\tkzDrawSegment(B'3,A'4)
+        %\tkzDrawSegment(A'4,B'4)
+        %\tkzDrawSegment(B'4,A'5)
+        %\tkzDrawSegment(A'5,B'5)
+        %\tkzDrawSegment(B'5,A'6)
+        %\tkzDrawSegment(A'6,B'6)
+        %\tkzDrawSegment(B'6,A'7)
+        %\tkzDrawSegment(A'7,B'7)
+        %\tkzDrawSegment(B'7,A'8)
+        %\tkzDrawSegment(A'8,B'8)
+        %\tkzDrawSegment(B'8,A'9)
+        %\tkzDrawSegment(A'9,B'9)
+        %\tkzDrawSegment(B'9,A'10)
+        %\tkzDrawSegment(A'10,B'10)
+        %\tkzDrawSegment(B'10,A'11)
+        %\tkzDrawSegment(A'11,B'11)
+        %\tkzDrawSegment(B'11,A'0)
+        %\tkzDrawSegment(A'0,B'0)
+        %\tkzFillPolygon[color=blue](B'0,A'1,B'1,A'2,B'2,A'3,B'3,A'4,B'4,A'5,B'5,A'6,B'6,A'7,B'7,A'8,B'8,A'9,B'9,A'10,B'10,A'11,B'11,A'0)
 
 
         %(D) Method of Making the Border
@@ -228,16 +228,29 @@
         \tkzInterLL(d3,da)(e5,e6) \tkzGetPoint{ed}
         \tkzInterLL(c5,c6)(e5,e6) \tkzGetPoint{ec}
         \tkzInterLL(c5,c6)(b1,b2) \tkzGetPoint{cb}
-        \tkzDrawSegment(ec,ed)
-        \tkzDrawSegment(ed,da)
-        \tkzDrawSegment(da,ab)
-        \tkzDrawSegment(ab,cb)
-        \tkzDrawSegment(cb,ec)
+        %\tkzDrawSegment(ec,ed)
+        %\tkzDrawSegment(ed,da)
+        %\tkzDrawSegment(da,ab)
+        %\tkzDrawSegment(ab,cb)
+        %\tkzDrawSegment(cb,ec)
 
         %(24) The above mentioned border will be provided if the flag is to be used with a rope. On the other hand, if it is to be hoisted on a pole, the hole on the border on the side AC can be extended according to requirements.
         %Explanation:- The lines HI, RS, FE, ED, JG, OQ, JK and UV are imaginary. Similarly, the external and internal circles of the sun and the other arcs except the crescent moon are imaginary. These are not shown on the flag.
+
+        %Colouring
+        \tkzFillPolygon[color=blue](ec,ed,da,ab,cb)
+        \tkzFillPolygon[color=red](A,C,G,E,B)
+        \tkzDrawArc[color=white,fill=white](M,P)(Q)
+        \tkzDrawArc[color=white,fill=red](L,P)(Q)
+        \tkzFillPolygon[color=white](A0,B1,A1,B2,A2,B3,A3,B4,A4,B5,A5,B6,A6,B7,A7,B8,A8,B9,B0)
+        \tkzDrawSegment[color=white](B0,B9)
+        \tkzDrawArc[color=white,fill=white](L,B0)(B9)
+        \tkzFillPolygon[color=white](B'0,A'1,B'1,A'2,B'2,A'3,B'3,A'4,B'4,A'5,B'5,A'6,B'6,A'7,B'7,A'8,B'8,A'9,B'9,A'10,B'10,A'11,B'11,A'0)
+
+
 
     \end{tikzpicture}
 \end{center}
 \end{document}
 % http://www.servat.unibe.ch/icl/np01000_.html
+

@@ -2,4 +2,4 @@
 !.gitignore
 *.tex
 *.svg
-*.md
+!*.rst
